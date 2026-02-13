@@ -4,55 +4,123 @@
     <meta charset="UTF-8">
     <title>Dada Safe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Global styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Skip link for keyboard users and screen readers -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Navigation -->
-    <nav>
-        <h2 class="logo">Dada Safe</h2>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Site header & primary navigation -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Primary navigation">
+            <div class="nav__brand" aria-label="Dada Safe home">
+                <span class="logo">Dada Safe</span>
+            </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Empowering Girls Online 💜</h1>
-        <p>Free Digital Rights, Data Protection & Online Safety Training</p>
-        <button onclick="scrollToPrograms()">Explore Programs</button>
-    </section>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                Menu
+            </button>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>What is Dada Safe?</h2>
-        <p>
-            Dada Safe is a free platform supporting girls and young women with
-            digital rights education, data protection awareness, fact-checking
-            skills, and psychosocial support to navigate the internet safely.
-        </p>
-    </section>
+            <ul class="nav__list" id="primary-menu">
+                <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+                <li class="nav__item"><a class="nav__link" href="#programs">Programs</a></li>
+                <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Programs Section -->
-    <section id="programs" class="programs">
-        <h2>Our Programs</h2>
-        <div class="program-container" id="programContainer">
-            <!-- JS will insert program cards here -->
-        </div>
-    </section>
+    <!-- Main page content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__content">
+                <img src="Image1.png.jpg" alt="Smiling girls using a computer safely online" width="400" height="320">
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Join Dada Safe</h2>
-        <p>Email us: dadasafe@gmail.com</p>
-    </section>
+                <div class="hero__text">
+                    <h1 id="hero-title">Empowering Girls Online 💜</h1>
+                    <p class="hero__subtitle">
+                        Free digital rights, data protection &amp; online safety training for girls and young women.
+                    </p>
+                    <button id="exploreProgramsBtn" class="btn btn--primary">
+                        Explore programs
+                    </button>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <p>© 2026 Dada Safe | All Rights Resevered 🌸</p>
+        <!-- About / Welcome Section -->
+        <section id="about" class="section about" aria-labelledby="about-title">
+            <div class="section__inner">
+                <h2 id="about-title">Welcome to your safe digital space</h2>
+                <p>
+                    Dada Safe is a free platform supporting girls and young women with
+                    digital rights education, data protection awareness, fact-checking
+                    skills, and psychosocial support to navigate the internet safely.
+                    If you have ever felt unsafe, unheard, or unsure how to respond
+                    to online abuse, you belong here.
+                </p>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="section programs" aria-labelledby="programs-title">
+            <div class="section__inner">
+                <h2 id="programs-title">Our Programs</h2>
+                <!-- Program cards rendered by JavaScript -->
+                <div class="program-container" id="programContainer" aria-live="polite">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section with call-to-action -->
+        <section id="contact" class="section contact" aria-labelledby="contact-title">
+            <div class="section__inner contact__layout">
+                <div class="contact__text">
+                    <h2 id="contact-title">Join Dada Safe</h2>
+                    <p>
+                        Want to bring Dada Safe training to your school, community group, or organization?
+                        Reach out and we will get back to you.
+                    </p>
+                    <p>
+                        You can also email us directly at
+                        <a href="mailto:dadasafe@gmail.com">dadasafe@gmail.com</a>.
+                    </p>
+                </div>
+
+                <!-- Simple accessible contact form (front-end only) -->
+                <form class="contact__form" aria-label="Request to join Dada Safe" novalidate>
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">How would you like to partner with Dada Safe?</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Tell us a bit about your needs"></textarea>
+                    </div>
+
+                    <!-- Primary call to action button -->
+                    <button type="submit" class="btn btn--accent contact__cta">
+                        Request a training session
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <p>© 2026 Dada Safe | All Rights Reserved 🌸</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
