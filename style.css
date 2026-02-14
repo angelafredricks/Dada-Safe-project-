@@ -205,13 +205,21 @@ section {
     overflow: hidden;
     aspect-ratio: 16 / 10;
     background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+    position: relative;
 }
 
 .card-img-wrap .card-img-top {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
+    display: block;
+}
+
+.card-img-wrap .card-img-top.img-placeholder {
+    object-fit: contain;
+    padding: 1rem;
 }
 
 .program-card:hover .card-img-top {
@@ -241,12 +249,22 @@ section {
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+    min-height: 280px;
 }
 
 .stories-img-wrap img {
     display: block;
     width: 100%;
     height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.stories-img-wrap img.img-placeholder {
+    min-height: 280px;
+    object-fit: contain;
 }
 
 .story-card {
