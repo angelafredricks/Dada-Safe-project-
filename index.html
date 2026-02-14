@@ -6,37 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dada Safe empowers girls and young women with digital rights education, data protection awareness and online safety skills.">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
 <header>
-    <nav>
-        <div class="logo-container">
-            <h2 class="logo">Dada Safe</h2>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dada Safe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#stories">Stories</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
     </nav>
 </header>
 
 <main>
 
     <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
+    <section class="hero d-flex align-items-center justify-content-center text-center" style="background: url('Background.jpg.jpg)>
+        <div class="hero-content" style="position: relative; z-index: 2; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 10px;">
             <h1>Empowering Girls Online 💜</h1>
             <p>Your safe space for digital rights, data protection and online safety education.</p>
-            <button id="exploreBtn">Explore Programs</button>
+            <button id="exploreBtn" class="btn btn-primary">Explore Programs</button>
         </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="about">
+    <section id="about" class="about container my-5">
         <h2>What is Dada Safe?</h2>
         <p>
             Dada Safe is a free platform supporting girls and young women with
@@ -46,39 +51,64 @@
     </section>
 
     <!-- PROGRAMS -->
-    <section id="programs" class="programs">
-        <h2>Our Programs</h2>
-        <div class="program-container" id="programContainer"></div>
+    <section id="programs" class="programs container my-5">
+        <h2 class="text-center mb-4">Our Programs</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="Dataprotection.jpg.jpg"card-img-top img-fluid" alt="Data Protection">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Protection Training</h5>
+                        <p class="card-text">Learn to safeguard your data and understand privacy laws online.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="training.jpg.jpg" class="card-img-top img-fluid" alt="Training">
+                    <div class="card-body">
+                        <h5 class="card-title">Fact Checking & Digital Rights</h5>
+                        <p class="card-text">Build skills in verifying information and knowing your digital rights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- STORIES -->
-    <section id="stories" class="stories">
-        <h2>Community Stories</h2>
-
-        <div class="story-card">
-            <h3>Jane’s Story</h3>
-            <p>“Dada Safe helped me understand how to protect my personal data online.”</p>
-        </div>
-
-        <div class="story-card">
-            <h3>Faith’s Story</h3>
-            <p>“I now feel confident reporting online harassment and misinformation.”</p>
+    <!-- STORIES / COMMUNITY -->
+    <section id="stories" class="stories container my-5">
+        <h2 class="text-center mb-4">Community Stories</h2>
+        <div class="row align-items-center g-4">
+            <div class="col-md-6">
+                <img src="factcheck.jpg.jpg" class="img-fluid rounded" alt="Community">
+            </div>
+            <div class="col-md-6">
+                <div class="story-card mb-3">
+                    <h3>Jane’s Story</h3>
+                    <p>“Dada Safe helped me understand how to protect my personal data online.”</p>
+                </div>
+                <div class="story-card">
+                    <h3>Faith’s Story</h3>
+                    <p>“I now feel confident reporting online harassment and misinformation.”</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact container my-5 text-center">
         <h2>Join Dada Safe</h2>
         <p>info@dadasafe.org</p>
-        <button id="joinBtn">Join Community</button>
+        <button id="joinBtn" class="btn btn-primary">Join Community</button>
     </section>
 
 </main>
 
-<footer>
+<footer class="bg-dark text-white text-center py-3">
     <p>© 2026 Dada Safe | All Rights Reserved 🌸</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
