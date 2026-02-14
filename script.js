@@ -1,43 +1,57 @@
-// script.js
+// script.js – Dada Safe
 
-// Smooth scroll to programs when hero button is clicked
-const exploreBtn = document.getElementById('exploreBtn');
-exploreBtn.addEventListener('click', () => {
-    document.getElementById('programs').scrollIntoView({ behavior: 'smooth' });
-});
+(function () {
+    'use strict';
 
-// Dynamically add program cards
-const programContainer = document.getElementById('programContainer');
-const programs = [
-    {
-        title: 'Data Protection Training',
-        description: 'Learn to safeguard your data and understand privacy laws online.',
-        image: 'images/data protection.jpg'
-    },
-    {
-        title: 'Fact Checking & Digital Rights',
-        description: 'Build skills in verifying information and knowing your digital rights.',
-        image: 'images/training.jpg'
+    // Smooth scroll for all anchor links (nav + any # links)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Hero CTA: scroll to programs
+    const exploreBtn = document.getElementById('exploreBtn');
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', () => {
+            const programs = document.getElementById('programs');
+            if (programs) programs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
     }
-];
 
-programs.forEach(prog => {
-    const card = document.createElement('div');
-    card.classList.add('col-md-6', 'mb-4');
-    card.innerHTML = `
-        <div class="card">
-            <img src="${prog.image}" class="card-img-top img-fluid" alt="${prog.title}">
-            <div class="card-body">
-                <h5 class="card-title">${prog.title}</h5>
-                <p class="card-text">${prog.description}</p>
-            </div>
-        </div>
-    `;
-    programContainer.appendChild(card);
-});
+    // Join Community button
+    const joinBtn = document.getElementById('joinBtn');
+    if (joinBtn) {
+        joinBtn.addEventListener('click', () => {
+            alert('Thank you for joining Dada Safe! We\'ll be in touch soon.');
+        });
+    }
 
-// Join Community button alert
-const joinBtn = document.getElementById('joinBtn');
-joinBtn.addEventListener('click', () => {
-    alert('Thank you for joining Dada Safe!');
-});
+    // Optional: highlight active nav on scroll (Bootstrap 5 compatible)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+    function setActiveNav() {
+        const scrollY = window.pageYOffset;
+        sections.forEach(section => {
+            const top = section.offsetTop - 80;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            if (scrollY >= top && scrollY < top + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + id) link.classList.add('active');
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', setActiveNav);
+    setActiveNav();
+})();
